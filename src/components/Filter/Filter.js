@@ -1,22 +1,16 @@
 import PropTypes from 'prop-types';
-const Filter = ({ filter, changeFilter }) => {
+const Filter = ({ changeFilter }) => {
   return (
     <>
       <label>
         Filter
-        <input
-          type="text"
-          value={filter}
-          onChange={changeFilter}
-          placeholder="Search..."
-        />
+        <input type="text" onChange={changeFilter} placeholder="Search..." />
       </label>
     </>
   );
 };
 
 Filter.propTypes = {
-  filter: PropTypes.string,
   changeFilter: PropTypes.func.isRequired,
 };
 
