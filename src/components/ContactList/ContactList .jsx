@@ -1,4 +1,4 @@
-import ContactListItem from 'ContactListItem';
+import ContactListItem from 'components/ContactListItem';
 import PropTypes from 'prop-types';
 import s from './ContactList.module.css';
 const ContactList = ({ contacts, onDeleteContact }) => {
