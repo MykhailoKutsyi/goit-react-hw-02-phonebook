@@ -21,7 +21,7 @@ class App extends Component {
     this.state.contacts.some(({ name }) => name === newContact.name)
       ? Notify.failure(`Contact ${newContact.name} already exists`)
       : this.setState(({ contacts }) => ({
-          contacts: [newContact, ...contacts],
+          contacts: [...contacts, newContact],
         }));
   };
 
@@ -42,11 +42,9 @@ class App extends Component {
     );
   };
 
-  deleteContact = contactName => {
+  deleteContact = contactId => {
     this.setState(prevState => ({
-      contacts: prevState.contacts.filter(
-        contact => contact.name !== contactName
-      ),
+      contacts: prevState.contacts.filter(contact => contact.id !== contactId),
     }));
   };
 
